@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import { AddressInfo } from "net";
 import * as path from 'path';
 import cookieparser = require('cookie-parser');
+import {MongoClient} from 'mongodb';
 
 const bodyParser = require('body-parser');
 
@@ -87,6 +88,9 @@ app.use((err, req, res, next) => { // eslint-disable-line @typescript-eslint/no-
         error: {}
     });
 });
+
+const mongoClient = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
+const clientPromise = mongoClient.connect();
 
 app.set('port', process.env.PORT || 3000);
 
