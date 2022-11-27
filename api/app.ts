@@ -31,10 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Enable cors
 
 var corsOptions = {
-    origin: ["http://localhost:5000", "http://localhost:3000"],
+    origin: ["https://toptech-autoworks-logger.netlify.app", "https://autoworks-logger-api.netlify.app, https://cssweng-mp-production.up.railway.app/"],
     optionsSuccessStatus: 200,
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization', "access-control-allow-credentials"],
+    allowedHeaders: ['Origin', 'X-Requested-With',  'Accept', 'Content-Type', 'Authorization', "access-control-allow-credentials"],
     methods: ['GET', 'POST', 'DELETE']
   }
 app.use(cors(corsOptions));
