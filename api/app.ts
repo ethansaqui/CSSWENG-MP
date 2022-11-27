@@ -15,7 +15,7 @@ const cors = require('cors');
 
 // connections
 const CONNECTION_STRING = "mongodb+srv://Admin:oA5IQmJy33VXrIzj@autoworks.jagxl7s.mongodb.net/autoworks?retryWrites=true&w=majority";
-const mongo = mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
+const mongo = mongoose.connect("mongodb+srv://Admin:oA5IQmJy33VXrIzj@autoworks.jagxl7s.mongodb.net/autoworks?retryWrites=true&w=majority");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -89,7 +89,7 @@ app.use((err, req, res, next) => { // eslint-disable-line @typescript-eslint/no-
     });
 });
 
-const mongoClient = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
+const mongoClient = new MongoClient("mongodb+srv://Admin:oA5IQmJy33VXrIzj@autoworks.jagxl7s.mongodb.net/autoworks?retryWrites=true&w=majority");
 const clientPromise = mongoClient.connect();
 
 app.set('port', process.env.PORT || 3000);
